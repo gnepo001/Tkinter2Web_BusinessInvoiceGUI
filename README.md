@@ -10,6 +10,7 @@ _subject to change\*_
 
 - Python Tkinter GUI
 - Web Representation via HTML and/or PDF file
+  - Use React to create output via JSON
 - CRUD capabilities
 - export to PDF
 
