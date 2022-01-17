@@ -14,16 +14,26 @@ def forget(frame):
 
 #updates shipements shown on app for user to see
 def update_statements(data,frame):
-    count = 0
+    count = 1
     for key, val in data.items():
-        ttk.Label(frame,text=f"{key} {val['From']} {val['To']} {val['Boxes']} {val['Charge']}").grid(row=count, column=0)
-        ttk.Button(frame,text="Remove",width=6,command=lambda : remove_statement(key,frame)).grid(row=count,column=1)
+        # ttk.Label(frame,text=f"{key} {val['From']} {val['To']} {val['Boxes']} {val['Charge']}").grid(row=count, column=0)
+        # ttk.Button(frame,text="Remove",width=6,command=lambda : remove_statement(key,frame)).grid(row=count,column=1)
+        ttk.Label(frame,text="Date").grid(row=0,column=0)
+        ttk.Label(frame,text="From").grid(row=0,column=1)
+        ttk.Label(frame,text="To").grid(row=0,column=2)
+        ttk.Label(frame,text="Boxes").grid(row=0,column=3)
+        ttk.Label(frame,text="Charge").grid(row=0,column=4)
+        ttk.Label(frame,text=f"{key} ").grid(row=count, column=0)
+        ttk.Label(frame,text=f"{val['From']} ").grid(row=count, column=1)
+        ttk.Label(frame,text=f"{val['To']} ").grid(row=count, column=2)
+        ttk.Label(frame,text=f"{val['Boxes']} ").grid(row=count, column=3)
+        ttk.Label(frame,text=f"{val['Charge']} ").grid(row=count, column=4)
+        ttk.Button(frame,text="Remove",width=6,command=lambda : remove_statement(key,frame)).grid(row=count,column=5)
         count +=1
    
 #remove statement
 def remove_statement(id,frame):
     forget(frame) #clears frame
-
     temp = dict() #temp dict to hold new dict information
 
     with open("data.json", 'r') as file:
@@ -35,6 +45,7 @@ def remove_statement(id,frame):
                 key:data[key]
             }
             temp.update(tempDict)
+            
     with open("data.json",'w') as file:
         json.dump(temp,file,indent=4)
     update_statements(temp,frame)
