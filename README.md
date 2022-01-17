@@ -2,17 +2,15 @@
 
 ## Purpose
 
-This app is intended for a shipping/logistics business to log transaction statements and create an invoice that is exported to Json, with the option to view via React on the web.
+This app is intended for a shipping/logistics business to log transaction statements and create an invoice that is exported to Json, with the option to view via React on the web. Exporting data as Json allows for futher usage with other apps built in the future.
 
 ## App Feature Check list
 
 _subject to change\*_
 
 - Python Tkinter GUI
-- Web Representation via HTML and/or PDF file
-  - Use React to create output via JSON
+- Export data as Json
 - CRUD capabilities
-- export to PDF
 
 ## Tkinter App
 

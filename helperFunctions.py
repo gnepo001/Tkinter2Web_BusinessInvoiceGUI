@@ -14,9 +14,30 @@ def forget(frame):
 
 #updates shipements shown on app for user to see
 def update_statements(data,frame):
+    count = 0
     for key, val in data.items():
-        ttk.Label(frame,text=f"{key} {val['From']} {val['To']} {val['Boxes']} {val['Charge']}").grid()
+        ttk.Label(frame,text=f"{key} {val['From']} {val['To']} {val['Boxes']} {val['Charge']}").grid(row=count, column=0)
+        ttk.Button(frame,text="Remove",width=6,command=lambda : remove_statement(key,frame)).grid(row=count,column=1)
+        count +=1
    
+#remove statement
+def remove_statement(id,frame):
+    forget(frame) #clears frame
+
+    temp = dict() #temp dict to hold new dict information
+
+    with open("data.json", 'r') as file:
+        data = json.load(file)
+
+    for key in data: 
+        if key != id: #filters out removed Id items
+            tempDict = {
+                key:data[key]
+            }
+            temp.update(tempDict)
+    with open("data.json",'w') as file:
+        json.dump(temp,file,indent=4)
+    update_statements(temp,frame)
 
 def saveFile(variables,root):
     forget(root) #clears statement frame
