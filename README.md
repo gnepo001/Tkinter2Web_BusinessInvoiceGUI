@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This app is intended for a shipping/logistics business to log transaction statements and create an invoice that can be viewed on the web and saved as a PDF
+This app is intended for a shipping/logistics business to log transaction statements and create an invoice that is exported to Json, with the option to view via React on the web.
 
 ## App Feature Check list
 
