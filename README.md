@@ -14,6 +14,10 @@ _subject to change\*_
 - CRUD capabilities
 - export to PDF
 
+## Tkinter App
+
+![alt text](./demo1.png)
+
 ## Goals for self
 
 I want to create this project in hopes of developing and honing in my programming skills across different programming languages, skills, and habits. In this project I will be working on :
