@@ -2,7 +2,6 @@ import tkinter as tk
 from tkinter import ttk
 import helperFunctions as helperFunc
 
-#test
 formTitles = ['Date','Driver ID','From', "To", "Boxes","Charge"]
 variables = dict()
 
@@ -10,6 +9,7 @@ variables = dict()
 root = tk.Tk()
 root.title("Shipping Statement")
 root.geometry("420x350+500+300")
+root.maxsize(420,1500)
 
 # Main Frame 
 drf = ttk.Frame(root)
