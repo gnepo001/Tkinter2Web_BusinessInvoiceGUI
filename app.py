@@ -55,7 +55,12 @@ ttk.Entry(infoFrame,textvariable=variables['Charge']).grid(row=1,column=1)
 btnFrame = ttk.Frame(root)
 btnFrame.grid(row=3,column=0,pady=10)
 
-ttk.Button(btnFrame,text="Clear",command= lambda :helperFunc.reset_data(variables)).grid(row=3,column=0)
-ttk.Button(btnFrame,text="Add",command=lambda : helperFunc.saveFile(variables)).grid(row=3,column=1)
+#frame for shipment statement
+statementDisplayFrame = ttk.LabelFrame(drf,text="Statement Information")
+statementDisplayFrame.grid(row=4,column=0)
+
+ttk.Button(btnFrame,text="Clear",command= lambda :helperFunc.reset_data(variables)).grid(row=0,column=0)
+ttk.Button(btnFrame,text="Add",command=lambda : helperFunc.saveFile(variables,statementDisplayFrame)).grid(row=0,column=1)
+
 
 root.mainloop()
