@@ -28,3 +28,4 @@ I want to create this project in hopes of developing and honing in my programmin
 - Github
 - Clean and documented code
 - Markup
+- Json
